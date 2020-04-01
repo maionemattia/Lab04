@@ -1,11 +1,15 @@
 package it.polito.tdp.lab04.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Studente {
 	
 	private Integer matricola;
 	private String cognome;
 	private String nome;
 	private String CDS;
+	private List<Corso> corsiFrequentati;
 	
 	/**
 	 * @param matricola
@@ -19,6 +23,7 @@ public class Studente {
 		this.cognome = cognome;
 		this.nome = nome;
 		CDS = cDS;
+		corsiFrequentati = new LinkedList<>();
 	}
 
 	/**
@@ -77,9 +82,23 @@ public class Studente {
 		CDS = cDS;
 	}
 
+	/**
+	 * @return the corsiFrequentati
+	 */
+	public List<Corso> getCorsiFrequentati() {
+		return corsiFrequentati;
+	}
+
+	/**
+	 * @param corsiFrequentati the corsiFrequentati to set
+	 */
+	public void aggiungiCorso(Corso corso) {
+		this.corsiFrequentati.add(corso);
+	}
+
 	@Override
 	public String toString() {
-		return "Studente [matricola=" + matricola + ", cognome=" + cognome + ", nome=" + nome + ", CDS=" + CDS + "]";
+		return matricola +"     "+ cognome +"     "+ nome +"     "+ CDS + "\n";
 	}
 
 	@Override

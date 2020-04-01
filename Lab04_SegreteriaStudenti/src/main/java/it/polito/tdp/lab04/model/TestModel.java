@@ -4,12 +4,13 @@ public class TestModel {
 
 	public static void main(String[] args) {
 
-		Model model = new Model();
+		//Model model = new Model();
 		
 		/*
 		 * 	Write here your test model
 		 */
-		model.getTuttiICorsi();
+		//model.getTuttiICorsi();
+		//model.getTuttiIscritti();
 
 	}
 

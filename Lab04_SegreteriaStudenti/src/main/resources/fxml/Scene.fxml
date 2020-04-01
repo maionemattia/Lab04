@@ -2,11 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -29,7 +28,7 @@
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Corsi" />
                </children>
                <padding>
                   <Insets top="10.0" />
@@ -55,7 +54,7 @@
                      </padding>
                   </Label>
                   <TextField fx:id="txtMatricola" prefWidth="100.0" />
-                  <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnCompleta" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#completa" style="-fx-background-color: green;" text="V" textFill="WHITE" />
                   <TextField fx:id="txtNome" prefWidth="120.0" />
                   <TextField fx:id="txtCognome" prefWidth="150.0" />
                </children>
