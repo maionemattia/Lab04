@@ -9,6 +9,7 @@ public class TestModel {
 		/*
 		 * 	Write here your test model
 		 */
+		model.getTuttiICorsi();
 
 	}
 
