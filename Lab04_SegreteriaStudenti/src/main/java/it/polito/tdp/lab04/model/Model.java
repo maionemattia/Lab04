@@ -14,6 +14,11 @@ public class Model {
 	public Model() {
 		CorsoDao = new CorsoDAO();
 		StudenteDao = new StudenteDAO();
+		CorsoDao.popolaTuttiICorsi();
+		StudenteDao.popolaIscritti();
+		CorsoDao.popolaStudentiIscrittiAiCorsi();
+		StudenteDao.popolaCorsiFrequentati();
+		
 	}
 	
 	public Map<String,Corso> getTuttiICorsi(){

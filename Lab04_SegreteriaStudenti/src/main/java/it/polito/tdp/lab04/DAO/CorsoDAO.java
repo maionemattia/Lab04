@@ -20,7 +20,7 @@ public class CorsoDAO {
 	/*
 	 * Ottengo tutti i corsi salvati nel Db
 	 */
-	public Map<String,Corso> getTuttiICorsi() {
+	public void popolaTuttiICorsi() {
 
 		final String sql = "SELECT * FROM corso";
 
@@ -47,13 +47,14 @@ public class CorsoDAO {
 
 			conn.close();
 			
-			return corsi;
-			
-
 		} catch (SQLException e) {
 			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
+	}
+	
+	public Map<String,Corso> getTuttiICorsi() {
+		return corsi;
 	}
 	
 	
@@ -67,7 +68,7 @@ public class CorsoDAO {
 	/*
 	 * Ottengo tutti gli studenti iscritti al Corso
 	 */
-	public List<Studente> getStudentiIscrittiAlCorso(Corso corso) {
+	public void popolaStudentiIscrittiAiCorsi() {
 		
 		final String sql = "SELECT * FROM iscrizione";
 		
@@ -100,14 +101,15 @@ public class CorsoDAO {
 
 			conn.close();
 			
-			return studentiAlCorso.get(corso.getCodins()).getStudentiCorso();
-			
-
 		} catch (SQLException e) {
 			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 		
+	}
+	
+	public List<Studente> getStudentiIscrittiAlCorso(Corso corso) {
+		return studentiAlCorso.get(corso.getCodins()).getStudentiCorso();
 	}
 
 	/*

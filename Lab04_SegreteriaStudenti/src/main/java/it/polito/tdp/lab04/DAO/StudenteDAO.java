@@ -17,7 +17,7 @@ public class StudenteDAO {
 	Map<Integer,Studente> corsiFrequentati;
 	CorsoDAO corsoDao;
 	
-	public Map<Integer, Studente> getTuttiIscritti() {
+	public void popolaIscritti() {
 
 		final String sql = "SELECT * FROM studente";
 
@@ -44,16 +44,13 @@ public class StudenteDAO {
 
 			conn.close();
 			
-			return studenti;
-			
-
 		} catch (SQLException e) {
 			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
 		}
 	}
 	
-	public List<Corso> getCorsiFrequentati(Integer m){
+	public void popolaCorsiFrequentati(){
 		
 		final String sql = "SELECT * FROM iscrizione";
 		
@@ -86,9 +83,6 @@ public class StudenteDAO {
 
 			conn.close();
 			
-			return corsiFrequentati.get(m).getCorsiFrequentati();
-			
-
 		} catch (SQLException e) {
 			// e.printStackTrace();
 			throw new RuntimeException("Errore Db", e);
@@ -96,13 +90,17 @@ public class StudenteDAO {
 		
 		
 	}
+	
+	public List<Corso> getCorsiFrequentati(Integer matricola) {
+		return corsiFrequentati.get(matricola).getCorsiFrequentati();
+	}
+	
+	public Map<Integer, Studente> getTuttiIscritti(){
+		return studenti;
+	}
 
 	public Studente getIscritto(Integer matricola) {
 		return studenti.get(matricola);
-	}
-	
-	public List<Corso> getCorsi(Integer matricola){
-		return studenti.get(matricola).getCorsiFrequentati();
 	}
 
 	public boolean verificaIscrizione(int matricola, Corso corso) {
